@@ -1,0 +1,6 @@
+D:\Personal\Projects\MyTCPSocketLibrary\MyTCPSocketLibrary\bin\Debug\MyTCPSocketLibrary.dll
+D:\Personal\Projects\MyTCPSocketLibrary\MyTCPSocketLibrary\bin\Debug\MyTCPSocketLibrary.pdb
+D:\Personal\Projects\MyTCPSocketLibrary\MyTCPSocketLibrary\obj\Debug\MyTCPSocketLibrary.csprojAssemblyReference.cache
+D:\Personal\Projects\MyTCPSocketLibrary\MyTCPSocketLibrary\obj\Debug\MyTCPSocketLibrary.csproj.CoreCompileInputs.cache
+D:\Personal\Projects\MyTCPSocketLibrary\MyTCPSocketLibrary\obj\Debug\MyTCPSocketLibrary.dll
+D:\Personal\Projects\MyTCPSocketLibrary\MyTCPSocketLibrary\obj\Debug\MyTCPSocketLibrary.pdb

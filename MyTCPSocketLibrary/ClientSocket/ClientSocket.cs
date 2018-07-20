@@ -1,42 +1,80 @@
-﻿using MyTCPSocketLibrary.Variable;
+﻿using MyTCPSocketLibrary.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyTCPSocketLibrary.ClientSocket
 {
-    public abstract class ClientSocket
+    public class ClientSocket : Connectivity
     {
-        #region Settings
-        private readonly Settings Settings;
-        #endregion
-
         #region Variables
-        private Socket _clientSocket;
+        #region Private Variables
+        private static Settings settings;
+        private static TcpClient _clientSocket;
+
         #endregion
+        public TcpClient Client => _clientSocket;
+        public NetworkStream Stream => Client.GetStream();
+        public Settings Settings
+        {
+            get
+            {
+                return settings;
+            }
+            set
+            {
+                settings = value;
+            }
+        }
+        public bool IsConnected => _clientSocket == null ? false : _clientSocket.Connected;
+
+        #endregion
+        public ClientSocket() { }
 
         public ClientSocket(IPEndPoint iPEndPoint)
         {
-            Settings = new Settings(iPEndPoint);
-            _clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            settings = new Settings(iPEndPoint);
         }
-        public bool IsConnected => _clientSocket == null ? false : _clientSocket.Connected;
-        public EndPoint LocalEndPoint => _clientSocket?.LocalEndPoint;
-        public EndPoint RemoteEndPoint => _clientSocket?.RemoteEndPoint;
-        public IPAddress IPAddress => Settings.IPEndPoint.Address;
-        public int Port => Settings.IPEndPoint.Port;
 
         /// <summary>
-        /// Connecting to Server Socket
+        /// Connect to Server Socket
         /// </summary>
         public virtual void Connect()
         {
+            _clientSocket = new TcpClient();
+            int attempts = 0;
 
+            while (!IsConnected)
+            {
+                try
+                {
+                    attempts++;
+                    Client.Connect(settings.IPAddress, settings.Port);
+                }
+                catch (SocketException)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Connection attempts: " + attempts.ToString());
+                }
+            }
+            Console.Write("Connected!!");
+        }
 
+        public virtual void Disconnect()
+        {
+            try
+            {
+                Stream.Close();
+                if (IsConnected)
+                {
+                    Client.LingerState = settings.LingerOption;
+                    Client.Close();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

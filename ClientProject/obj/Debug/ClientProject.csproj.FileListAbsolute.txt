@@ -1,0 +1,10 @@
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\bin\Debug\ClientProject.exe.config
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\bin\Debug\ClientProject.exe
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\bin\Debug\ClientProject.pdb
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\bin\Debug\MyTCPSocketLibrary.dll
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\bin\Debug\MyTCPSocketLibrary.pdb
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\obj\Debug\ClientProject.csprojAssemblyReference.cache
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\obj\Debug\ClientProject.csproj.CoreCompileInputs.cache
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\obj\Debug\ClientProject.csproj.CopyComplete
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\obj\Debug\ClientProject.exe
+D:\Personal\Projects\MyTCPSocketLibrary\ClientProject\obj\Debug\ClientProject.pdb
