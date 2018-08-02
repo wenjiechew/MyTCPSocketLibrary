@@ -10,6 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Connectivity\Connectivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entity\Process.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ServerTcp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\Settings.cs" />
   </ItemGroup>
 </Project>

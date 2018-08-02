@@ -30,7 +30,7 @@ namespace ServerApp
 
         private static void ListenForClient()
         {
-            Console.WriteLine("Waiting for Clients");
+            Console.Write("Waiting for Clients");
             tcpListener.Start();
 
             while (true)
@@ -39,7 +39,7 @@ namespace ServerApp
                 TcpClient client = tcpListener.AcceptTcpClient();
                 ClientList.Add(client);
 
-                Console.WriteLine("Client Connected: ", ClientList.Count().ToString());
+                Console.WriteLine("Client Connected: {0}", ClientList.Count().ToString());
                 Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
                 clientThread.Start(client);
             }
@@ -52,7 +52,7 @@ namespace ServerApp
 
             byte[] message = new byte[4096];
             int byteRead;
-            Console.WriteLine("Reading Msg... ...");
+            Console.WriteLine("Reading Msg...");
             while (true)
             {
                 byteRead = 0;
@@ -71,7 +71,7 @@ namespace ServerApp
                 if(byteRead == 0)
                 {
                     ClientList.Remove(tcpClient);
-                    Console.WriteLine("No of Clients Conneted: ", ClientList.Count().ToString());
+                    Console.WriteLine("No of Clients Conneted: {0}", ClientList.Count().ToString());
                     break;
                 }
 
@@ -80,9 +80,8 @@ namespace ServerApp
 
                 //Convert the Bytes received to a string and display
                 string msg = encoder.GetString(message, 0, byteRead);
-                Console.Clear();
-                Console.Write("No of Clients Connected: ", ClientList.Count().ToString());
-                Console.WriteLine("Message Incoming: ", msg);
+                Console.WriteLine("No of Clients Connected: {0}", ClientList.Count().ToString());
+                Console.WriteLine("Message Incoming: {0}", msg);
 
                 //Echo the msg back to client
                 Echo(msg, encoder, clientStream);

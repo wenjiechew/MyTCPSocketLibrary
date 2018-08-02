@@ -1,0 +1,7 @@
+D:\Personal\Projects\MyTCPSocketLibrary\ClientApp\obj\Debug\ClientApp.csprojAssemblyReference.cache
+D:\Personal\Projects\MyTCPSocketLibrary\ClientApp\obj\Debug\ClientApp.csproj.CoreCompileInputs.cache
+D:\Personal\Projects\MyTCPSocketLibrary\ClientApp\bin\Debug\ClientApp.exe.config
+D:\Personal\Projects\MyTCPSocketLibrary\ClientApp\bin\Debug\ClientApp.exe
+D:\Personal\Projects\MyTCPSocketLibrary\ClientApp\bin\Debug\ClientApp.pdb
+D:\Personal\Projects\MyTCPSocketLibrary\ClientApp\obj\Debug\ClientApp.exe
+D:\Personal\Projects\MyTCPSocketLibrary\ClientApp\obj\Debug\ClientApp.pdb
